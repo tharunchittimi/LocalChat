@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.example.localchat.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.login.LoginActivity">
+
+        <include
+            android:id="@+id/toolBarLogin"
+            layout="@layout/inflate_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp20">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideLineStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dp20" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideLineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dp20" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideTopDivider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/dp200" />
+
+                <ImageView
+                    android:id="@+id/imgLoginLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/curve_login_top"
+                    android:contentDescription="@null"
+                    app:layout_constraintBottom_toBottomOf="@id/guideTopDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="@dimen/dp150"
+                    android:layout_height="@dimen/dp150"
+                    android:src="@drawable/ic_logo"
+                    android:contentDescription="@null"
+                    app:layout_constraintBottom_toBottomOf="@id/imgLoginLogo"
+                    app:layout_constraintEnd_toEndOf="@id/imgLoginLogo"
+                    app:layout_constraintStart_toStartOf="@id/imgLoginLogo"
+                    app:layout_constraintTop_toTopOf="@id/imgLoginLogo" />
+
+                <com.example.localchat.widgets.CustomTextView
+                    android:id="@+id/tvWelcomeHeading"
+                    style="@style/extra_large_text_bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:gravity="center"
+                    android:text="Welcome!"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                    app:layout_constraintTop_toBottomOf="@id/guideTopDivider" />
+
+                <com.example.localchat.widgets.CustomTextView
+                    android:id="@+id/tvLoginHeading"
+                    style="@style/large_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:gravity="center"
+                    android:text="Sign In to continue"
+                    android:textColor="@color/color919191"
+                    app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                    app:layout_constraintTop_toBottomOf="@id/tvWelcomeHeading" />
+
+                <com.example.localchat.widgets.MyCustomTextInputLayout
+                    android:id="@+id/txtInputSignInEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="10"
+                    android:textColorHint="@color/color919191"
+                    app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                    app:layout_constraintTop_toBottomOf="@id/tvLoginHeading" />
+
+                <com.example.localchat.widgets.MyCustomTextInputLayout
+                    android:id="@+id/txtInputSignInPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/color919191"
+                    app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                    app:layout_constraintTop_toBottomOf="@id/txtInputSignInEmail"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#bebebe" />
+
+                <com.example.localchat.widgets.CustomButton
+                    android:id="@+id/btnSignIn"
+                    style="@style/custom_btn_yellow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:text="SIGN IN"
+                    app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guideLineStart"
+                    app:layout_constraintTop_toBottomOf="@id/txtInputSignInPassword" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rootLayoutChatItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgChatIcon"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_margin="@dimen/dp10"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivSelectIcon"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:contentDescription="@null"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/imgChatIcon"
+            app:layout_constraintBottom_toBottomOf="@id/imgChatIcon" />
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvChatTitle"
+            style="@style/large_text_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp15"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tvChatLastMessage"
+            app:layout_constraintEnd_toStartOf="@id/tvChatDate"
+            app:layout_constraintStart_toEndOf="@id/imgChatIcon"
+            app:layout_constraintTop_toTopOf="@id/imgChatIcon"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="User1" />
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvChatDate"
+            style="@style/medium_small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp15"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tvChatLastMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvChatTitle"
+            app:layout_constraintTop_toTopOf="@id/tvChatTitle"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="11/11/2021" />
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvChatLastMessage"
+            style="@style/medium_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginEnd="@dimen/dp15"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color919191"
+            app:layout_constraintBottom_toBottomOf="@id/imgChatIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgChatIcon"
+            app:layout_constraintTop_toBottomOf="@id/tvChatTitle"
+            tools:text="hello hi" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="imgChatIcon, tvChatLastMessage" />
+
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="0dp"
+            android:layout_height="0.025dp"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvChatLastMessage"
+            app:layout_constraintTop_toBottomOf="@id/barrierBottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

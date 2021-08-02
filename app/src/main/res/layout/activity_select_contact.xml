@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="selectContactViewModel"
+            type="com.example.localchat.ui.home.selectcontact.SelectContactViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.home.selectcontact.SelectContactActivity">
+
+        <include
+            android:id="@+id/toolBarSelectContact"
+            layout="@layout/inflate_toolbar_with_contacts_count" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSelectContactsList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/toolBarSelectContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/dp20" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llvNoData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/dp20"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBarSelectContact">
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvHeading"
+                style="@style/large_text_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="No Data Available!"
+                android:textColor="@color/black" />
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvDesc"
+                style="@style/medium_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:gravity="center"
+                android:text="No contacts right now to create group or chat"
+                android:textColor="@color/color919191" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

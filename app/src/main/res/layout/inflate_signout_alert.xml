@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingTop="@dimen/dp30"
+    android:paddingRight="@dimen/dp15"
+    android:paddingBottom="@dimen/dp30">
+
+    <com.example.localchat.widgets.CustomTextView
+        android:id="@+id/txtSignOutHeading"
+        style="@style/extra_large_text_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Sign Out"
+        android:textColor="@color/black" />
+
+    <com.example.localchat.widgets.CustomTextView
+        android:id="@+id/txtSignOutDesc"
+        style="@style/large_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:gravity="center"
+        android:text="Do you want to sign out?"
+        android:textColor="@color/black" />
+
+    <com.example.localchat.widgets.CustomButton
+        android:id="@+id/btnSendSignOut"
+        style="@style/custom_btn_yellow"
+        android:layout_width="@dimen/dp250"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp30"
+        android:text="SIGN OUT" />
+
+    <com.example.localchat.widgets.CustomTextView
+        android:id="@+id/txtSignOutCancel"
+        style="@style/medium_text_semi_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp25"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:padding="@dimen/dp5"
+        android:text="Cancel"
+        android:textColor="@color/grey_text" />
+
+</LinearLayout>

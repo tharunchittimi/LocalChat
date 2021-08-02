@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp30"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llvReceiveData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_receive_chat_item"
+            android:orientation="vertical"
+            android:padding="@dimen/dp10"
+            app:layout_constraintEnd_toStartOf="@id/tvReceiveDataTime"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="wrap">
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvReceiveDataUserName"
+                style="@style/medium_large_text_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                tools:text="Hi this is user hi this is user" />
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvReceiveData"
+                style="@style/medium_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:textColor="@color/black"
+                tools:text="Hi this is user  is user" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvReceiveDataTime"
+            style="@style/small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/dp5"
+            android:textColor="@color/medium_grey"
+            app:layout_constraintBottom_toBottomOf="@id/llvReceiveData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/llvReceiveData"
+            tools:text="10:20" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

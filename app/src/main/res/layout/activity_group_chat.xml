@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="groupChatViewModel"
+            type="com.example.localchat.ui.home.groupchat.GroupChatViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.groupchat.GroupChatActivity">
+
+        <include
+            android:id="@+id/toolBarGroupChat"
+            layout="@layout/inflate_toolbar_chat" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChatList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/dp10"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/bottomlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBarGroupChat" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llvNoData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/dp20"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/bottomlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBarGroupChat">
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvHeading"
+                style="@style/large_text_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="No Data Available!"
+                android:textColor="@color/black" />
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvDesc"
+                style="@style/medium_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:gravity="center"
+                android:text="Please click below button to start chat"
+                android:textColor="@color/color919191" />
+
+            <com.example.localchat.widgets.CustomButton
+                android:id="@+id/btnStartChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                style="@style/custom_btn_yellow"
+                android:text="Start Chat"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/input"
+            android:baselineAligned="false"
+            android:minHeight="60dp"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.example.localchat.widgets.CustomEditText
+                android:id="@+id/chatEditText1"
+                style="@style/large_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp10"
+                android:background="@null"
+                android:hint="Type a message"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="4"
+                android:paddingTop="@dimen/dp10"
+                android:paddingBottom="@dimen/dp10"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/medium_grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/enterChat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/enterChat"
+                android:layout_width="@dimen/dp25"
+                android:layout_height="@dimen/dp25"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="@dimen/dp5"
+                android:src="@drawable/ic_send"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

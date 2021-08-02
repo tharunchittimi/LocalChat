@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
+        android:gravity="end"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvSendDataTime"
+            style="@style/small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginEnd="@dimen/dp5"
+            android:ellipsize="end"
+            android:textColor="@color/medium_grey"
+            tools:text="10:20" />
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvSendData"
+            style="@style/medium_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_send_chat_item"
+            android:padding="@dimen/dp10"
+            android:textColor="@color/white"
+            tools:text="Hi this is htfgkjh hb hlk jh kh kjh kjh kh kjhlk jh kjh kjh kjh lkjh lkjh kjhkhk jhk k hj kjh jh kjhl " />
+
+    </LinearLayout>
+
+</LinearLayout>

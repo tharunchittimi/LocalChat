@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp100"
+            android:background="@color/snack_color">
+
+            <ImageView
+                android:id="@+id/imgChatIcon"
+                android:layout_width="@dimen/dp60"
+                android:layout_height="@dimen/dp60"
+                android:layout_margin="@dimen/dp15"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_default_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvChatTitle"
+                style="@style/large_text_bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp15"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/tvPhoneNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgChatIcon"
+                app:layout_constraintTop_toTopOf="@id/imgChatIcon"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="User1" />
+
+            <com.example.localchat.widgets.CustomTextView
+                android:id="@+id/tvPhoneNumber"
+                style="@style/medium_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp15"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/imgChatIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgChatIcon"
+                app:layout_constraintTop_toBottomOf="@id/tvChatTitle"
+                tools:text="User1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.example.localchat.widgets.CustomTextView
+            android:id="@+id/tvSignOut"
+            style="@style/extra_large_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_screens"
+            android:padding="@dimen/dp10"
+            android:text="Sign Out" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
+
