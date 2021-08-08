@@ -1,5 +1,6 @@
 package com.example.localchat.ui.home.selectcontact.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -69,13 +70,17 @@ class SelectContactAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun addList(chatHomeList: ArrayList<UserEntity>) {
         clearList()
+        val positionStart = itemCount - 1
         this.selectContactList.add(0, null)
         this.selectContactList.addAll(chatHomeList)
+//        notifyItemRangeInserted(positionStart, selectContactList.size)
         notifyDataSetChanged()
     }
 
     fun clearList() {
+        val oldSize = itemCount
         this.selectContactList.clear()
+//        notifyItemRangeRemoved(0, oldSize)
         notifyDataSetChanged()
     }
 
